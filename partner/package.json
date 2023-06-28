@@ -2,7 +2,7 @@
   "name": "partner",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Olevova.github.io/PartnerReact/",
+  "homepage": "https://Olevova.github.io/PartnerReact/partner/",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
     "@craco/craco": "^7.1.0",
