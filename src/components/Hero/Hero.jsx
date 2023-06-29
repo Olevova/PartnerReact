@@ -6,8 +6,6 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { createClient } from "contentful";
 import { Link } from "react-router-dom";
-// import dotenv from "dotenv";
-// dotenv.config();
 
 export const Hero = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
