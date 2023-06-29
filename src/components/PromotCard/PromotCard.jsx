@@ -14,7 +14,6 @@ export const PromotCard = ({ id, about, sale, photo, newPrice, oldPrice }) => {
         <div className="price-section">
           <p className="original-price">{oldPrice} грн/шт</p>
           <p className="sale-price">{newPrice} грн/шт</p>
-          {/* <span className="product-title">Акція «Партнер»</span> */}
         </div>
       </Card>
     </>
