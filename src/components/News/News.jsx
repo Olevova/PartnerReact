@@ -1,8 +1,9 @@
 import Container from "../Container/Container.styled";
-import { NewsStyled } from "./News.styled";
+import { CategoryText, NewsStyled, AnimatedLetter } from "./News.styled";
 import { NewsComponent } from "../NewsComponent/NewsComponent";
 import { useState, useEffect } from "react";
 import { createClient } from "contentful";
+
 export const News = () => {
   const [news, setNews] = useState([]);
 
@@ -28,12 +29,20 @@ export const News = () => {
       })
       .catch(console.error);
   }, []);
+
+  const categoryText = "News";
   console.log(news, "client");
   const renderNews = news.slice(0, 4);
   return (
     <Container>
       <NewsStyled>
-        <p>News</p>
+        <CategoryText>
+          {categoryText.split("").map((letter, index) => (
+            <AnimatedLetter key={index} index={index}>
+              {letter}
+            </AnimatedLetter>
+          ))}
+        </CategoryText>
         <div className="news_block">
           {renderNews.map((item) => (
             <NewsComponent key={item.id} item={item} />
