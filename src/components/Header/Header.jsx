@@ -73,20 +73,34 @@ const Header = ({ themeChange, value }) => {
 
               <nav className="">
                 <ul className="header_nav">
-                  <li className="header_nav_link active">
-                    <NavLinkComp to="/">Головна</NavLinkComp>
+                  <li className="header_nav_link">
+                    <NavLinkComp
+                      data-replace="Головна"
+                      // className={({ isActive }) => (isActive ? "active" : " ")}
+                      to="/"
+                    >
+                      <span>Головна</span>
+                    </NavLinkComp>
                   </li>
                   <li className="header_nav_link">
-                    <NavLinkComp href="#">Акції</NavLinkComp>
+                    <NavLinkComp data-replace="Акції" to="/promotions">
+                      <span>Акції</span>
+                    </NavLinkComp>
                   </li>
                   <li className="header_nav_link">
-                    <NavLinkComp href="#">Новини</NavLinkComp>
+                    <NavLinkComp data-replace="Новини" to="/news">
+                      <span>Новини</span>
+                    </NavLinkComp>
                   </li>
                   <li className="header_nav_link">
-                    <NavLinkComp href="#">Контакти</NavLinkComp>
+                    <NavLinkComp data-replace="Контакти" to="/contacts">
+                      <span>Контакти</span>
+                    </NavLinkComp>
                   </li>
                   <li className="header_nav_link">
-                    <NavLinkComp href="#">Робота</NavLinkComp>
+                    <NavLinkComp data-replace="Робота" to="/work">
+                      <span>Робота</span>
+                    </NavLinkComp>
                   </li>
                 </ul>
               </nav>

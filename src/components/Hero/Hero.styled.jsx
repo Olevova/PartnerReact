@@ -16,6 +16,9 @@ export const HeroStyle = styled.section`
       height: 450px;
     }
   }
+  .swiper {
+    max-height: 380px;
+  }
 
   .hero_link {
     font-size: large;

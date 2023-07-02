@@ -30,7 +30,7 @@ export const News = () => {
       .catch(console.error);
   }, []);
 
-  const categoryText = "News";
+  const categoryText = "Новини";
   console.log(news, "client");
   const renderNews = news.slice(0, 4);
   return (

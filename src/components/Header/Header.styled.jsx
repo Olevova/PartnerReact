@@ -47,33 +47,6 @@ export const HeaderContainer = styled(Container)`
       background-size 0.3s calc(0.3s - var(--_s, 0s));
   }
 
-  .header_nav_link:hover {
-    --_p: 100%;
-    --_s: 0.3s;
-  }
-  .header_nav_link.active {
-    position: relative;
-    --b: 0.1em; /* толщина линии */
-    --c: ${(props) => props.theme.colors.link}; /* цвет */
-
-    padding-bottom: var(--b);
-  }
-
-  .header_nav_link.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: var(--b);
-    background-color: var(--c);
-    transition: width 0.3s;
-  }
-
-  .header_nav_link.active:hover::after {
-    width: 0;
-  }
-
   .header_nav {
     display: flex;
     flex-direction: column;
@@ -85,6 +58,7 @@ export const HeaderContainer = styled(Container)`
       flex-direction: row;
     }
   }
+
   .icons {
     position: absolute;
     left: 20px;

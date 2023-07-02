@@ -8,3 +8,4 @@ const Background = styled.div`
   background-color: ${(props) => props.theme.colors.background};
 `;
 export default Background;
+/* rgba(6, 200, 217, 0.5); */
