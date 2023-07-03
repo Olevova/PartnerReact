@@ -40,6 +40,7 @@ export const Footer = () => {
             <form action="">
               <label htmlFor="">
                 <input
+                  className="input-form"
                   type="text"
                   name="phone"
                   placeholder="Ваш Телефон"
@@ -47,8 +48,10 @@ export const Footer = () => {
                   onChange={phoneSend}
                 />
               </label>
-              <button type="submit">Підписатись</button>
-              <FaEdit />
+              <button type="submit">
+                Підписатись
+                <FaEdit />
+              </button>
             </form>
           </div>
         </div>
