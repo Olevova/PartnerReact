@@ -34,21 +34,24 @@ export const News = () => {
   console.log(news, "client");
   const renderNews = news.slice(0, 4);
   return (
-    <Container>
-      <NewsStyled>
-        <CategoryText>
-          {categoryText.split("").map((letter, index) => (
-            <AnimatedLetter key={index} index={index}>
-              {letter}
-            </AnimatedLetter>
-          ))}
-        </CategoryText>
-        <div className="news_block">
-          {renderNews.map((item) => (
-            <NewsComponent key={item.id} item={item} />
-          ))}
-        </div>
-      </NewsStyled>
-    </Container>
+    <div style={{ position: "relative" }}>
+      <img src="./Moon.svg" alt="moon" style={{ position: "absolute" }} />
+      <Container>
+        <NewsStyled>
+          <CategoryText>
+            {categoryText.split("").map((letter, index) => (
+              <AnimatedLetter key={index} index={index}>
+                {letter}
+              </AnimatedLetter>
+            ))}
+          </CategoryText>
+          <div className="news_block">
+            {renderNews.map((item) => (
+              <NewsComponent key={item.id} item={item} />
+            ))}
+          </div>
+        </NewsStyled>
+      </Container>
+    </div>
   );
 };

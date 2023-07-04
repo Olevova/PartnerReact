@@ -39,8 +39,9 @@ export const Topfive = () => {
   const categoryText = `Найбільша`;
   const categoryTextSecond = `${"   "}Знижка`;
   return (
-    <Container>
-      <section>
+    <section style={{ marginBottom: "100px", position: "relative" }}>
+      <img src="./Moon1.svg" alt="moon1" style={{ position: "absolute" }} />
+      <Container>
         <CategoryText>
           {categoryText.split("").map((letter, index) => (
             <AnimatedLetter key={index} index={index}>
@@ -180,7 +181,7 @@ export const Topfive = () => {
             )}
           </div>
         </TopCard>
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 };

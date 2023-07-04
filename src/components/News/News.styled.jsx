@@ -4,7 +4,8 @@ import { device } from "../Container/deviseType";
 export const NewsStyled = styled.section`
   width: auto;
   height: auto;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+  margin-top: 100px;
 
   .news_block {
     display: grid;
