@@ -24,6 +24,7 @@ export const Footer = () => {
       } else {
         // Якщо сталася помилка при надсиланні листа
         console.error("Failed to send email");
+        console.log(process.env.SENDGRID_API_KEY);
       }
     } catch (error) {
       console.error("Error:", error);
