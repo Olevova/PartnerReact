@@ -6,15 +6,15 @@ import { createClient } from "contentful";
 import { FaShoppingBasket } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper";
+
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 // import "./styles.css";
 
 // import required modules
+import { Pagination, Autoplay } from "swiper";
 
 export const Shops = () => {
   const categoryText = `Наші`;
@@ -74,48 +74,50 @@ export const Shops = () => {
               alt="title"
               style={{ zIndex: "8" }}
             />
+            <p className="about">
+              Наша мережа налічує 13 магазинів, які розташовані у найбільших
+              містах Хмельницької області. Наша мережа це і супермаркети і
+              магазини біля дому...
+            </p>
           </PhotoContainer>
           {shops.length > 0 && (
             <Swiper
-              effect={"coverflow"}
-              grabCursor={true}
-              centeredSlides={true}
-              slidesPerView={"auto"}
-              coverflowEffect={{
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
+              direction={"vertical"}
+              pagination={{
+                clickable: true,
               }}
-              pagination={true}
-              modules={[EffectCoverflow, Pagination]}
+              autoplay={{
+                delay: 3500,
+                disableOnInteraction: false,
+              }}
+              modules={[Pagination, Autoplay]}
               className="mySwiper"
             >
-              <nav>
-                {shops.map(({ id, title, address, preview }) => (
-                  <NavLink key={id}>
-                    <SwiperSlide>
-                      <li className="shop-card">
-                        <div className="shop-one">
-                          <div className="shop-title">
-                            <FaShoppingBasket />
-                            <h2 className="">{title}</h2>
-                          </div>
-                          <p className="shop-add">{address}</p>
-                          <div className="circle">
-                            <img
-                              className="shop-img"
-                              src={preview}
-                              alt={title}
-                            />
-                          </div>
-                        </div>
-                      </li>
-                    </SwiperSlide>
+              {shops.map(({ id, title, address, preview }) => (
+                <SwiperSlide
+                  key={id}
+                  style={{
+                    position: "relative",
+                    width: "600px",
+                    height: "600px",
+                    borderRadius: "15px",
+                    border: "20px solid white",
+                  }}
+                >
+                  {/* <div className="shop-one"> */}
+                  <img className="shop-img" src={preview} alt={title} />
+                  <NavLink to={"/shops"}>
+                    <div className="shop-title">
+                      <div className=" title-link">
+                        <FaShoppingBasket />
+                        <h2 className="">{title}</h2>
+                      </div>
+                      <p className="shop-add">{address}</p>
+                    </div>
                   </NavLink>
-                ))}
-              </nav>
+                  {/* </div> */}
+                </SwiperSlide>
+              ))}
             </Swiper>
           )}
         </ShopsContainer>

@@ -9,6 +9,30 @@ export const Footer = () => {
   const phoneSend = (e) => {
     setPhone(e.target.value);
   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/.netlify/functions/sendEmail", {
+        method: "POST",
+        body: JSON.stringify({ phone }),
+      });
+
+      if (response.ok) {
+        // Якщо лист успішно надіслано
+        console.log("Email sent successfully");
+      } else {
+        // Якщо сталася помилка при надсиланні листа
+        console.error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  // const handlePhoneChange = (e) => {
+  //   setPhone(e.target.value);
+  // };
 
   return (
     <FooterStyle>
@@ -37,8 +61,8 @@ export const Footer = () => {
             </li>
           </nav>
           <div className="footer-form">
-            <form action="">
-              <label htmlFor="">
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="phone">
                 <input
                   className="input-form"
                   type="text"
