@@ -4,7 +4,7 @@ exports.handler = async (event, context) => {
   try {
     const { phone } = JSON.parse(event.body);
 
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    sgMail.setApiKey('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');
 
     const message = {
       to: "olevova1983@gmail.com", // Вкажіть власну поштову скриньку

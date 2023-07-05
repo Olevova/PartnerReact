@@ -1,2 +1,9 @@
 [build]
-  functions = "netlify/functions"
+  command = "npm run build" # Змініть це на вашу команду збірки проекту
+  functions = "functions-build"
+
+[dev]
+  functions = "functions-build"
+
+[build.environment]
+  SENDGRID_API_KEY = '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' # Замініть на свій ключ API SendGrid
