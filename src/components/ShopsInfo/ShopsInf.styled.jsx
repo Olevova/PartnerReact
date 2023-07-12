@@ -22,13 +22,14 @@ const ShopsInf = styled.div`
 
   .shopsInfo_info {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 20px;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
   }
   .shop_item {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
+    gap: 5px;
+    align-content: center;
 
     .item {
       padding: 5px;

@@ -1,4 +1,5 @@
 const path = require("path");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   // інші налаштування Webpack
@@ -8,5 +9,8 @@ module.exports = {
       os: require.resolve("os-browserify/browser"),
       crypto: require.resolve("crypto-browserify"),
     },
+     plugins: [
+    new Dotenv()
+  ]
   },
 };
