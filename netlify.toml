@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build" # Змініть це на вашу команду збірки проекту
-  functions = "functions-build"
+  # command = "npm run build" # Змініть це на вашу команду збірки проекту
+  functions = "functions/"
 
 [dev]
   functions = "functions-build"

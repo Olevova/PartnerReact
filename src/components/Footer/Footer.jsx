@@ -17,7 +17,7 @@ export const Footer = () => {
         method: "POST",
         body: JSON.stringify({ phone }),
       });
-      console.log(body, response);
+      // console.log(body, response);
       if (response.ok) {
         // Якщо лист успішно надіслано
         console.log("Email sent successfully");

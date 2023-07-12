@@ -60,6 +60,5 @@ export const AnimatedLetter = styled.span`
   animation: ${animate} 1.5s ease-in-out;
   animation-fill-mode: forwards;
   opacity: 0;
-
   animation-delay: ${({ index }) => `${0.1 * index}s`};
 `;
