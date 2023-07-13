@@ -4,7 +4,12 @@ const ShopsInf = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-
+  .map {
+    position: absolute;
+    right: 110px;
+    top: 50px;
+    width: 200px;
+  }
   .shopsInfo_block {
     /* position: absolute; */
     width: 100%;
@@ -21,14 +26,16 @@ const ShopsInf = styled.div`
   }
 
   .shopsInfo_info {
+    font-family: "Lobster", cursive;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 2fr;
     gap: 5px;
   }
   .shop_item {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: repeat(1, 1fr); */
+    /* gap: 5px; */
     align-content: center;
 
     .item {
@@ -37,6 +44,9 @@ const ShopsInf = styled.div`
       justify-content: left;
       align-items: center;
       color: ${(props) => props.theme.colors.logo};
+    }
+    .item.active {
+      color: red;
     }
     .icon {
       position: relative;
@@ -62,21 +72,42 @@ const ShopsInf = styled.div`
         opacity: 0;
       }
     }
+    .text {
+      font-family: "Lobster", cursive;
+    }
     .item:hover {
+      transition: all 300ms ease-in 0s;
       cursor: pointer;
-      scale: 1.02;
+      scale: 1.01;
+      color: red;
     }
 
     .item:hover .icon {
-      background-color: ${(props) => props.theme.colors.logo};
+      transition: all 300ms ease-in 0s;
+      background-color: red;
     }
     .item:hover .two {
+      transition: all 300ms ease-in 0s;
       opacity: 1;
       fill: white;
     }
     .item:hover .one {
+      transition: all 300ms ease-in 0s;
       opacity: 0;
     }
+  }
+  .item.active .icon {
+    transition: all 300ms ease-in 0s;
+    background-color: red;
+  }
+  .item.active .two {
+    transition: all 300ms ease-in 0s;
+    opacity: 1;
+    fill: white;
+  }
+  .item.active .one {
+    transition: all 300ms ease-in 0s;
+    opacity: 0;
   }
   .item_style {
     font-weight: 600;

@@ -23,8 +23,16 @@ export const ShopsInfo = (props) => {
   const categoryTextSecond = "Магазини";
   console.log(props, "props", shops);
   const [activeShop, setActiveShop] = useState(null);
-  const handleMarkerClick = (id) => {
+  const [center, setCenter] = useState({
+    lat: 49.41,
+    lng: 26.97,
+  });
+
+  const handleMarkerClick = (id, location) => {
+    const { lat, lon } = location;
     setActiveShop(id);
+    setCenter({ lat, lng: lon });
+    console.log(center, "center");
   };
 
   const iconAtribute = (iconcolor) => {
@@ -43,14 +51,15 @@ export const ShopsInfo = (props) => {
     height: "400px",
   };
 
-  const center = {
-    lat: 49.405538060744696,
-    lng: 27.010243411646226,
-  };
+  // const center = {
+  //   lat: 49.41,
+  //   lng: 26.97,
+  // };
   return (
     <ShopsInf>
       <img src="./Moon.svg" alt="moon" style={{ position: "absolute" }} />
       <Container style={{ position: "relative" }}>
+        <img className="map" src="./map.svg" width="200px" alt="map" />
         <div className="shopsInfo_block">
           <div className="shopsInfo_text">
             <CategoryText
@@ -90,16 +99,16 @@ export const ShopsInfo = (props) => {
                 <div
                   key={item.id}
                   className={`item ${activeShop === item.id ? "active" : ""}`}
-                  onClick={() => handleMarkerClick(item.id)}
+                  onClick={() => handleMarkerClick(item.id, item.location)}
                 >
                   <div className="icon">
                     <AiOutlineShopping className="one" />
                     <AiOutlineDoubleRight className="two" />
                   </div>
-                  <p>
+                  <p className="text">
                     <span className="item_style">Магазин:</span> {item.title}
                   </p>
-                  <p>
+                  <p className="text">
                     <span className="item_style" style={{ marginLeft: "10px" }}>
                       Адреса:
                     </span>{" "}
