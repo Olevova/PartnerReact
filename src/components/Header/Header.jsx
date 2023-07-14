@@ -31,15 +31,15 @@ const Header = ({ themeChange, value }) => {
     return;
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   if (name.length === 0) {
-  //     inputRef.current.classList.add("invalid");
-  //   } else {
-  //     // Ваша логіка для відправки форми
-  //     setModalToggle(false);
-  //   }
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (name.length === 0) {
+      inputRef.current.classList.add("invalid");
+    } else {
+      // Ваша логіка для відправки форми
+      setModalToggle(false);
+    }
+  };
 
   useEffect(() => {
     console.log(toggleBlock, "nav");
@@ -127,7 +127,7 @@ const Header = ({ themeChange, value }) => {
                   <div className="modal_content">
                     <form
                       className="modal_form"
-                      // onSubmit="submit"
+                      onSubmit={handleSubmit}
                       method="POST"
                       data-netlify="true"
                       name="feedback"

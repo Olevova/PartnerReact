@@ -9,30 +9,30 @@ export const Footer = () => {
   const phoneSend = (e) => {
     setPhone(e.target.value);
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    try {
-      const response = await fetch(
-        "http://localhost:8888/.netlify/functions/sendEmail",
-        {
-          method: "POST",
-          body: JSON.stringify({ phone }),
-        }
-      );
-      // console.log(body, response);
-      if (response.ok) {
-        // Якщо лист успішно надіслано
-        console.log("Email sent successfully");
-      } else {
-        // Якщо сталася помилка при надсиланні листа
-        console.error("Failed to send email");
-        console.log(process.env.REACT_APP_SENDGRID_API_KEY);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+  //   try {
+  //     const response = await fetch(
+  //       "http://localhost:8888/.netlify/functions/sendEmail",
+  //       {
+  //         method: "POST",
+  //         body: JSON.stringify({ phone }),
+  //       }
+  //     );
+  //     // console.log(body, response);
+  //     if (response.ok) {
+  //       // Якщо лист успішно надіслано
+  //       console.log("Email sent successfully");
+  //     } else {
+  //       // Якщо сталася помилка при надсиланні листа
+  //       console.error("Failed to send email");
+  //       console.log(process.env.REACT_APP_SENDGRID_API_KEY);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // };
 
   // const handlePhoneChange = (e) => {
   //   setPhone(e.target.value);
@@ -65,7 +65,13 @@ export const Footer = () => {
             </li>
           </nav>
           <div className="footer-form">
-            <form onSubmit={handleSubmit}>
+            <form
+              onSubmit="submit"
+              name="emailform"
+              method="POST"
+              data-netlify="true"
+            >
+              <input type="hidden" name="form-name" value="emailform"></input>
               <label htmlFor="phone">
                 <input
                   className="input-form"
