@@ -13,10 +13,13 @@ export const Footer = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/.netlify/functions/sendEmail", {
-        method: "POST",
-        body: JSON.stringify({ phone }),
-      });
+      const response = await fetch(
+        "http://localhost:8888/.netlify/functions/sendEmail",
+        {
+          method: "POST",
+          body: JSON.stringify({ phone }),
+        }
+      );
       // console.log(body, response);
       if (response.ok) {
         // Якщо лист успішно надіслано
@@ -24,7 +27,7 @@ export const Footer = () => {
       } else {
         // Якщо сталася помилка при надсиланні листа
         console.error("Failed to send email");
-        console.log(process.env.SENDGRID_API_KEY);
+        console.log(process.env.REACT_APP_SENDGRID_API_KEY);
       }
     } catch (error) {
       console.error("Error:", error);

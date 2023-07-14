@@ -1,10 +1,12 @@
 const sgMail = require("@sendgrid/mail");
+import {Handler} from "@netlify/functions"
 
 exports.handler = async (event, context) => {
+  console.log("cliccccck");
   try {
     const { phone } = JSON.parse(event.body);
 
-    sgMail.setApiKey('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');
+    sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
     const message = {
       to: "olevova1983@gmail.com", // Вкажіть власну поштову скриньку

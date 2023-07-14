@@ -125,7 +125,11 @@ const Header = ({ themeChange, value }) => {
                   onClick={handleToggleModal}
                 >
                   <div className="modal_content">
-                    <form className="modal_form" onSubmit={handleSubmit}>
+                    <form
+                      className="modal_form"
+                      onSubmit={handleSubmit}
+                      netlify
+                    >
                       <label>
                         Ваше Ім'я
                         <input
