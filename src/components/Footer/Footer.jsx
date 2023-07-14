@@ -68,10 +68,10 @@ export const Footer = () => {
             <form
               onSubmit="submit"
               name="emailform"
-              method="POST"
+              method="post"
               data-netlify="true"
             >
-              <input type="hidden" name="form-name" value="emailform"></input>
+              <input type="hidden" name="form-name" value="emailform" />
               <label htmlFor="phone">
                 <input
                   className="input-form"
