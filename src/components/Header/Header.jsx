@@ -128,6 +128,7 @@ const Header = ({ themeChange, value }) => {
                     <form
                       className="modal_form"
                       onSubmit={handleSubmit}
+                      method="POST"
                       netlify
                     >
                       <label>
