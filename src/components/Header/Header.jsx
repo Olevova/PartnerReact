@@ -129,7 +129,8 @@ const Header = ({ themeChange, value }) => {
                       className="modal_form"
                       onSubmit={handleSubmit}
                       method="POST"
-                      netlify
+                      data-netlify="true"
+                      name="feedback"
                     >
                       <label>
                         Ваше Ім'я
