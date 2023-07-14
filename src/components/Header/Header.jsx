@@ -132,6 +132,7 @@ const Header = ({ themeChange, value }) => {
                       data-netlify="true"
                       name="feedback"
                     >
+                      <input type="hidden" name="form-name" value="feedback" />
                       <label>
                         Ваше Ім'я
                         <input
