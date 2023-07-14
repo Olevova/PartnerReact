@@ -127,7 +127,7 @@ const Header = ({ themeChange, value }) => {
                   <div className="modal_content">
                     <form
                       className="modal_form"
-                      onSubmit="submit"
+                      // onSubmit="submit"
                       method="POST"
                       data-netlify="true"
                       name="feedback"
