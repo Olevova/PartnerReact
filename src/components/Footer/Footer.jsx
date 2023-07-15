@@ -66,10 +66,11 @@ export const Footer = () => {
           </nav>
           <div className="footer-form">
             <form
-              onSubmit="submit"
+              // onSubmit="submit"
               name="emailform"
               method="post"
               data-netlify="true"
+              data-netlify-honeypot="bot-field"
             >
               <input type="hidden" name="form-name" value="emailform" />
               <label htmlFor="phone">
