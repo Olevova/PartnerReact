@@ -69,8 +69,8 @@ export const Footer = () => {
               // onSubmit="submit"
               name="emailform"
               method="POST"
-              // data-netlify="true"
-              // data-netlify-honeypot="bot-field"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
             >
               <input type="hidden" name="form-name" value="emailform" />
               <label htmlFor="phone">
