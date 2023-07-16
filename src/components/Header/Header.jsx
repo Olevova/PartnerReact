@@ -131,6 +131,7 @@ const Header = ({ themeChange, value }) => {
                       method="POST"
                       data-netlify="true"
                       name="feedback"
+                      data-netlify-honeypot="bot-field"
                     >
                       <input type="hidden" name="form-name" value="feedback" />
                       <label>

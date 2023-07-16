@@ -31,7 +31,14 @@
       <input name="form-name" value="emailform" hidden />
       <input type="text" name="phone" />
     </form>
+    <form method="POST" data-netlify="true" name="feedback" hidden>
+      <input type="hidden" name="form-name" value="feedback" />
+      <input type="text" name="username" />
+      <textarea name="text"></textarea>
+    </form>
+
     <noscript>You need to enable JavaScript to run this app. </noscript>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
