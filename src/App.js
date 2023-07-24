@@ -10,7 +10,7 @@ import { Promotions } from './components/Promotions/Promotions';
 import { ShopsInfo } from 'components/ShopsInfo/ShopsInfo';
 import { ShopsProvider } from 'context/ShopContext';
 import { NewsProvider } from 'context/NewsContext';
-import  OneNewsPage  from 'components/OneNewsPage/OneNewsPage';
+// import  OneNewsPage  from 'components/OneNewsPage/OneNewsPage';
 import NewsPage from 'page/NewsPage';
 
 function App() {
