@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { MoreLinkComponent } from "./Morelink.styled";
 import { AiFillCaretRight } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
