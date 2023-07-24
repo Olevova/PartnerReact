@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 import { TopCard } from "./TopFive.styled";
 import Container from "../Container/Container.styled";
 import { CategoryText, AnimatedLetter } from "../News/News.styled";
+import Morelink from "components/MoreLink/Morelink";
 
 export const Topfive = () => {
   const [promotion, setPromotion] = useState([]);
@@ -49,6 +50,7 @@ export const Topfive = () => {
             </AnimatedLetter>
           ))}
         </CategoryText>
+        <Morelink content={"promotions"} />
         <CategoryText style={{ marginLeft: "10px" }}>
           {categoryTextSecond.split("").map((letter, index) => (
             <AnimatedLetter key={index} index={index}>

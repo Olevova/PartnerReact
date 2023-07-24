@@ -23,6 +23,7 @@ export const PromotionSection = styled.section`
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    cursor: pointer;
   }
 
   .pagination a {

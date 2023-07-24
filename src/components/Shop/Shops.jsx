@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper";
+import Morelink from "components/MoreLink/Morelink";
 
 export const Shops = () => {
   const categoryText = `Наші`;
@@ -66,6 +67,7 @@ export const Shops = () => {
             </AnimatedLetter>
           ))}
         </CategoryText>
+        <Morelink content="shops" right="50px" />
         <ShopsContainer>
           <PhotoContainer>
             <img

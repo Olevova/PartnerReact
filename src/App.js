@@ -9,6 +9,9 @@ import { Main } from './page/Main';
 import { Promotions } from './components/Promotions/Promotions';
 import { ShopsInfo } from 'components/ShopsInfo/ShopsInfo';
 import { ShopsProvider } from 'context/ShopContext';
+import { NewsProvider } from 'context/NewsContext';
+import  OneNewsPage  from 'components/OneNewsPage/OneNewsPage';
+import NewsPage from 'page/NewsPage';
 
 function App() {
   const [value, setValue] = useState(false);
@@ -21,13 +24,19 @@ function App() {
     <ThemeProvider theme={theme}>
       <Background>
         <ShopsProvider>
+          <NewsProvider>
         <Routes>
           <Route path="/" element={<Home themeChange={themeChange} value={value} />} >
             <Route index element={<Main />} /> 
             <Route path='/promotions' element={<Promotions />} />
-            <Route path='/shops' element={ <ShopsInfo />} />
-        </Route>
-          </Routes>
+                <Route path='/shops' element={<ShopsInfo />} />
+                <Route path='/news' element={<NewsPage />}>
+                  {/* <Route path='/:id' element={<OneNewsPage />} /> */}
+                </Route>
+              
+          </Route>
+            </Routes>
+            </NewsProvider>
           </ShopsProvider>
       </Background>
     </ThemeProvider>

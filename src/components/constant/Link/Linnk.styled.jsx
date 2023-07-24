@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const NavLinkComp = styled(NavLink)`
+export const NavLinkComp = styled(NavLink)`
   color: ${(props) => props.theme.colors.link};
   position: relative;
   display: inline-block;
@@ -57,6 +57,7 @@ const NavLinkComp = styled(NavLink)`
   }
 `;
 
-export default NavLinkComp;
-
-/* rgba(6, 200, 217, 0.5); */
+export const PageLink = styled(NavLink)`
+  cursor: pointer;
+  text-decoration: none;
+`;

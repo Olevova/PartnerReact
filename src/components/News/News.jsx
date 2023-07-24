@@ -3,6 +3,8 @@ import { CategoryText, NewsStyled, AnimatedLetter } from "./News.styled";
 import { NewsComponent } from "../NewsComponent/NewsComponent";
 import { useState, useEffect } from "react";
 import { createClient } from "contentful";
+import { PageLink } from "components/constant/Link/Linnk.styled";
+import Morelink from "components/MoreLink/Morelink";
 
 export const News = () => {
   const [news, setNews] = useState([]);
@@ -45,9 +47,12 @@ export const News = () => {
               </AnimatedLetter>
             ))}
           </CategoryText>
+          <Morelink content={"news"} />
           <div className="news_block">
             {renderNews.map((item) => (
-              <NewsComponent key={item.id} item={item} />
+              <PageLink to={`/news/${item.id}`} key={item.id}>
+                <NewsComponent item={item} />
+              </PageLink>
             ))}
           </div>
         </NewsStyled>

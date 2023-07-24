@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { HeaderPrimary, HeaderContainer } from "./Header.styled";
 import Logo from "../Logo/Logo";
-import NavLinkComp from "../constant/Link/Linnk.styled";
+import { NavLinkComp } from "../constant/Link/Linnk.styled";
 import {
   BarsArrowDownIcon,
   BarsArrowUpIcon,
