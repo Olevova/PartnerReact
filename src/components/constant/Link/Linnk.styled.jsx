@@ -60,4 +60,5 @@ export const NavLinkComp = styled(NavLink)`
 export const PageLink = styled(NavLink)`
   cursor: pointer;
   text-decoration: none;
+  color: red;
 `;

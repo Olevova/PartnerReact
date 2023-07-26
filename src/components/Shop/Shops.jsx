@@ -81,7 +81,7 @@ export const Shops = () => {
             </AnimatedLetter>
           ))}
         </CategoryText>
-        <Morelink content="shops" right="50px" />
+        {windowWidth > 765 && <Morelink content="shops" right="50px" />}
         <ShopsContainer>
           <PhotoContainer>
             <img

@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { device } from "components/Container/deviseType";
 
 export const MoreLinkComponent = styled.div`
   position: absolute;
   top: 0;
-  right: ${(props) => (props.right ? props.right : "300px")};
+  right: 20px;
   border: 1px solid transparent;
   width: ${(props) => (props.open ? "auto" : "50px")};
   height: 50px;
@@ -15,6 +16,9 @@ export const MoreLinkComponent = styled.div`
   padding: 10px;
   border-radius: 15px;
   transition: width 0.3s, background-color 0.3s;
+  @media ${device.tablet} {
+    right: ${(props) => (props.right ? props.right : "300px")};
+  }
 
   .morelink {
     display: flex;

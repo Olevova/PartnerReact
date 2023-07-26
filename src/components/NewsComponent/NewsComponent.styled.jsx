@@ -8,6 +8,7 @@ export const NewsCard = styled.div`
   margin: auto;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  color: ${(props) => props.theme.colors.link};
   @media ${device.desktop} {
     width: 320px;
     height: 320px;
@@ -31,16 +32,19 @@ export const NewsCard = styled.div`
   .title {
     margin-top: 10px;
     padding-left: 20px;
+    color: ${(props) => props.theme.colors.link};
   }
 
   p {
     margin-bottom: 0;
     padding: 20px;
+    color: ${(props) => props.theme.colors.link};
   }
   .overlay {
     background-color: white;
     top: 0;
     bottom: 0;
     position: absolute;
+    color: ${(props) => props.theme.colors.link};
   }
 `;
