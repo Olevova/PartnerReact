@@ -12,7 +12,7 @@ export default function NewsPageComponent({
   const isLeft = index % 2 === 0;
   return (
     <Projcard isLeft={isLeft}>
-      <PageLink to={id}>
+      <PageLink to={`/news/${id}`}>
         <div className="projcard-innerbox">
           <img
             className={`projcard-img projcard-img`}

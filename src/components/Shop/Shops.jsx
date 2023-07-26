@@ -21,6 +21,20 @@ export const Shops = () => {
   const categoryText = `Наші`;
   const categoryTextSecond = `Магазини`;
   const [shops, setShops] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const handleWindowResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Add window resize event listener
+    window.addEventListener("resize", handleWindowResize);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
 
   useEffect(() => {
     const client = createClient({
@@ -100,8 +114,8 @@ export const Shops = () => {
                   key={id}
                   style={{
                     position: "relative",
-                    width: "600px",
-                    height: "600px",
+                    width: windowWidth > 765 ? "600px" : "300px",
+                    height: windowWidth > 765 ? "600px" : "300px",
                     borderRadius: "15px",
                     border: "20px solid white",
                   }}
@@ -114,7 +128,9 @@ export const Shops = () => {
                         <FaShoppingBasket />
                         <h2 className="">{title}</h2>
                       </div>
-                      <p className="shop-add">{address}</p>
+                      {windowWidth > 765 && (
+                        <p className="shop-add">{address}</p>
+                      )}
                     </div>
                   </NavLink>
                   {/* </div> */}

@@ -2,7 +2,8 @@ import { FooterStyle } from "./Footer.styled";
 import { useState } from "react";
 import Logo from "../Logo/Logo";
 import { FooterContainer } from "./Footer.styled";
-import { FaEdit, FaViber, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+import SocialLink from "components/SocialLink/SocialLink";
 
 export const Footer = () => {
   const [phone, setPhone] = useState("");
@@ -52,21 +53,9 @@ export const Footer = () => {
             <a href="mailto:mango@mail.pig">Наш Email - mango@mail.pig</a>
             <a href="tel:+1112223344">Наш телефон - (111) 222-33-44</a>
           </address>
-          <nav className="sociale">
-            <p>Ми у Соціальних Мережах </p>
-            <li>
-              <FaViber /> Viber
-            </li>
-            <li>
-              <FaInstagram /> Instagram
-            </li>
-            <li>
-              <FaFacebook /> Facebook
-            </li>
-          </nav>
+          <SocialLink />
           <div className="footer-form">
             <form
-              // onSubmit="submit"
               name="emailform"
               method="POST"
               data-netlify="true"

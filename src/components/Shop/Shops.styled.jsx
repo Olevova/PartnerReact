@@ -1,60 +1,71 @@
 import styled from "styled-components";
+import { device } from "components/Container/deviseType";
 
 export const PhotoContainer = styled.div`
-  position: relative;
-  border: 20px solid white;
-  border-radius: 50%;
-  width: 100%;
-  height: 70%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 7;
-  margin-top: 100px;
-  .photo {
-    position: absolute;
-    top: 0;
-    left: 0;
+  display: none;
+  @media ${device.desktop} {
+    position: relative;
+    border: 20px solid white;
+    border-radius: 50%;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s ease-in-out;
-  }
-  .about {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    color: black;
-    background-color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    align-items: center;
+    height: 70%;
+    overflow: hidden;
     display: flex;
-    text-align: center;
-    font-size: 20px;
-    color: ${(props) => props.theme.colors.link};
-  }
-  &:hover {
+    justify-content: center;
+    align-items: center;
+    z-index: 7;
+    margin-top: 100px;
     .photo {
-      opacity: 0.2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease-in-out;
     }
     .about {
-      opacity: 0.8;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      color: black;
+      background-color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      align-items: center;
+      display: flex;
+      text-align: center;
+      font-size: 20px;
+      color: ${(props) => props.theme.colors.link};
+    }
+    &:hover {
+      .photo {
+        opacity: 0.2;
+      }
+      .about {
+        opacity: 0.8;
+      }
     }
   }
 `;
 
 export const ShopsContainer = styled.div`
   display: grid;
-  grid-template-columns: 40% 60%;
-  grid-template-rows: 700px; /* Змінено на 700px */
+  grid-template-rows: 300px;
   grid-column-gap: 20px;
   grid-row-gap: 0px;
+
+  @media ${device.tablet} {
+    grid-template-rows: 700px;
+  }
+
+  @media ${device.desktop} {
+    grid-template-columns: 40% 60%;
+  }
 
   .shop-title {
     background-color: white;

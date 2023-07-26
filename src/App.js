@@ -10,7 +10,7 @@ import { Promotions } from './components/Promotions/Promotions';
 import { ShopsInfo } from 'components/ShopsInfo/ShopsInfo';
 import { ShopsProvider } from 'context/ShopContext';
 import { NewsProvider } from 'context/NewsContext';
-// import  OneNewsPage  from 'components/OneNewsPage/OneNewsPage';
+import  OneNewsPage  from 'components/OneNewsPage/OneNewsPage';
 import NewsPage from 'page/NewsPage';
 
 function App() {
@@ -30,9 +30,9 @@ function App() {
             <Route index element={<Main />} /> 
             <Route path='/promotions' element={<Promotions />} />
                 <Route path='/shops' element={<ShopsInfo />} />
-                <Route path='/news' element={<NewsPage />}>
-                  {/* <Route path='/:id' element={<OneNewsPage />} /> */}
-                </Route>
+                <Route path='/news' element={<NewsPage />}/>
+                <Route path='/news/:id' element={<OneNewsPage />} />
+                
               
           </Route>
             </Routes>
